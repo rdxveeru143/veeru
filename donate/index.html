@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Veeru ko Support Karein — Donate</title>
+<meta name="description" content="Veeru Verma ko UPI se support karein — amount aap khud select karein. Aapki help se Money Sensei aur Wazirganj College Updates ka kaam aage badhta rahega.">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; background: #0f172a; color: #f1f5f9; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 24px; background-image: radial-gradient(ellipse 80% 50% at 50% -10%, rgba(245, 158, 11, .22), transparent); }
+  .card { max-width: 560px; width: 100%; text-align: center; }
+  .avatar { width: 96px; height: 96px; border-radius: 50%; background: linear-gradient(135deg, #f59e0b, #ef4444); display: flex; align-items: center; justify-content: center; font-size: 44px; font-weight: 800; color: #fff; margin: 0 auto 20px; box-shadow: 0 8px 30px rgba(245, 158, 11, .35); }
+  h1 { font-size: 2.1rem; line-height: 1.2; margin-bottom: 8px; }
+  .tag { color: #fbbf24; font-weight: 600; margin-bottom: 16px; }
+  p.bio { color: #cbd5e1; line-height: 1.7; margin-bottom: 24px; }
+  .donate-box { background: #1e293b; border: 1px solid #334155; border-radius: 16px; padding: 24px 20px; margin-bottom: 20px; }
+  .upi-row { display: flex; gap: 8px; margin-bottom: 14px; }
+  .upi-row code { flex: 1; background: #0f172a; border: 1px solid #334155; border-radius: 8px; padding: 10px 12px; font-size: .85rem; color: #f1f5f9; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: left; }
+  .upi-row button { background: #334155; color: #f1f5f9; border: 1px solid #475569; border-radius: 8px; padding: 10px 14px; font-weight: 600; cursor: pointer; }
+  .upi-row button:hover { background: #475569; }
+  .donate-btn { display: block; padding: 15px 18px; border-radius: 12px; background: #f59e0b; color: #0f172a; text-decoration: none; font-weight: 700; font-size: 1.05rem; }
+  .donate-btn:hover { background: #fbbf24; }
+  .amount-note { color: #94a3b8; font-size: .85rem; margin-top: 10px; }
+  .thanks { background: linear-gradient(135deg, rgba(245, 158, 11, .15), rgba(239, 68, 68, .12)); border: 1px solid rgba(245, 158, 11, .4); border-radius: 16px; padding: 20px; margin-bottom: 20px; }
+  .thanks h2 { font-size: 1.15rem; margin-bottom: 6px; }
+  .thanks p { color: #cbd5e1; line-height: 1.6; font-size: .95rem; }
+  .share-btn { display: block; width: 100%; padding: 14px 18px; border-radius: 12px; background: #1e293b; border: 1px solid #334155; color: #f1f5f9; font-weight: 600; font-size: 1rem; cursor: pointer; transition: .15s; }
+  .share-btn:hover { background: #334155; border-color: #f59e0b; }
+  footer { margin-top: 28px; color: #64748b; font-size: .85rem; }
+  footer a { color: #94a3b8; }
+</style>
+</head>
+<body>
+  <main class="card">
+    <div class="avatar">V</div>
+    <h1>Veeru ko Support Karein</h1>
+    <div class="tag">Aapki chhoti si help, bade kaam aati hai</div>
+    <p class="bio">Main Money Sensei aur Wazirganj College Updates par free mehnat karta hun — taaki har student tak sahi jaankari time par pahunche. Aapki help se ye kaam aage badhta rahega.</p>
+    <div class="donate-box">
+      <div class="upi-row">
+        <code id="upi-id">gpay-11257539620@okbizaxis</code>
+        <button onclick="navigator.clipboard.writeText('gpay-11257539620@okbizaxis'); this.textContent='Copied!'; setTimeout(()=>this.textContent='Copy',1500);">Copy</button>
+      </div>
+      <a class="donate-btn" href="upi://pay?pa=gpay-11257539620@okbizaxis&amp;pn=Veeru%20Verma&amp;cu=INR">Donate via UPI</a>
+      <div class="amount-note">Amount aap khud select kar sakte hain.</div>
+    </div>
+    <div class="thanks">
+      <h2>Dil se shukriya!</h2>
+      <p>Aapki har help — chhoti ho ya badi — mere kaam ko aage badhati hai. Thank you!</p>
+    </div>
+    <button class="share-btn" onclick="shareHelped()">Maine help kiya — Share karein</button>
+    <footer>© 2026 Veeru Verma &middot; <a href="/">veeruverma.vercel.app</a></footer>
+  </main>
+<script>
+function shareHelped() {
+  var text = 'Maine Veeru Verma ki help ki 🙏 Aap bhi support karein:';
+  var url = 'https://veeruverma.vercel.app/donate';
+  if (navigator.share) {
+    navigator.share({ title: 'Maine Veeru ki help ki', text: text, url: url }).catch(function(){});
+  } else if (navigator.clipboard) {
+    navigator.clipboard.writeText(text + ' ' + url);
+    var b = document.querySelector('.share-btn');
+    b.textContent = 'Copied! Share kar sakte hain';
+    setTimeout(function(){ b.textContent = 'Maine help kiya — Share karein'; }, 2000);
+  }
+}
+</script>
+</body>
+</html>
