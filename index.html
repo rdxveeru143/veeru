@@ -17,6 +17,15 @@
   .links a { display: block; padding: 14px 18px; border-radius: 12px; background: #1e293b; border: 1px solid #334155; color: #f1f5f9; text-decoration: none; font-weight: 600; transition: .15s; }
   .links a:hover { background: #334155; border-color: #f59e0b; }
   .links a span { display: block; font-weight: 400; font-size: .85rem; color: #94a3b8; margin-top: 2px; }
+  .donate { margin-top: 28px; padding-top: 24px; border-top: 1px solid #334155; }
+  .donate h2 { font-size: 1.3rem; margin-bottom: 8px; }
+  .donate p { color: #cbd5e1; line-height: 1.6; margin-bottom: 16px; font-size: .95rem; }
+  .upi-row { display: flex; gap: 8px; margin-bottom: 14px; }
+  .upi-row code { flex: 1; background: #1e293b; border: 1px solid #334155; border-radius: 8px; padding: 10px 12px; font-size: .85rem; color: #f1f5f9; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: left; }
+  .upi-row button { background: #334155; color: #f1f5f9; border: 1px solid #475569; border-radius: 8px; padding: 10px 14px; font-weight: 600; cursor: pointer; }
+  .upi-row button:hover { background: #475569; }
+  .donate-btn { display: block; padding: 14px 18px; border-radius: 12px; background: #f59e0b; color: #0f172a; text-decoration: none; font-weight: 700; }
+  .donate-btn:hover { background: #fbbf24; }
   footer { margin-top: 28px; color: #64748b; font-size: .85rem; }
 </style>
 </head>
@@ -32,6 +41,15 @@
       <a href="https://wazirganjcollege.vercel.app/">Wazirganj College Updates — Website<span>wazirganjcollege.vercel.app</span></a>
       <a href="https://www.instagram.com/wazirganj_college">Instagram<span>@wazirganj_college</span></a>
     </div>
+    <section class="donate">
+      <h2>Support Me</h2>
+      <p>If my work helps you, you can support it with a donation via UPI — you choose the amount.</p>
+      <div class="upi-row">
+        <code id="upi-id">gpay-11257539620@okbizaxis</code>
+        <button onclick="navigator.clipboard.writeText('gpay-11257539620@okbizaxis'); this.textContent='Copied!'; setTimeout(()=>this.textContent='Copy',1500);">Copy</button>
+      </div>
+      <a class="donate-btn" href="upi://pay?pa=gpay-11257539620@okbizaxis&amp;pn=Veeru%20Verma&amp;cu=INR">Donate via UPI</a>
+    </section>
     <footer>© 2026 Veeru Verma</footer>
   </main>
 </body>
